@@ -89,7 +89,7 @@ public class SomeClass {
 	}
 	
 	public void testPrint() {
-		System.out.println("Print something");
+		System.out.println("Print something else");
 	}
 	
 
