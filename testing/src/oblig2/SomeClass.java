@@ -13,15 +13,16 @@ import java.util.Scanner;
 public class SomeClass {
 	private LineNumberReader lnr, myLnr;
 	private FileReader filereader;
-	private File afile, bfile;
+	//private File afile, bfile;
+	private File file;
 	private String breakIteratorSource;
 	private ArrayList<Integer> posList = new ArrayList<Integer>();
 	private ArrayList<Integer> lnrList = new ArrayList<Integer>();
 	
 	public LineNumberReader openStream(String pathToFile) {
 		try {
-			afile = new File(pathToFile);
-			filereader = new FileReader(afile);
+			file = new File(pathToFile);
+			filereader = new FileReader(file);
 			lnr = new LineNumberReader(filereader);
 		} catch(FileNotFoundException e) {
 			System.out.println("File not found!");
@@ -30,9 +31,9 @@ public class SomeClass {
 	}
 	
 	public String readFile(String pathname) throws IOException {
-	    bfile = new File(pathname);
-	    StringBuilder fileContents = new StringBuilder((int)bfile.length());
-	    Scanner scanner = new Scanner(bfile);
+	    file = new File(pathname);
+	    StringBuilder fileContents = new StringBuilder((int)file.length());
+	    Scanner scanner = new Scanner(file);
 	    String lineSeparator = System.getProperty("line.separator");
 	    
 	    try {
@@ -81,7 +82,7 @@ public class SomeClass {
 			System.out.println("Search counter: " + searchCounter);
 			System.out.println("Number of sentences: " + sentenceCounter);
 			System.out.println("Number of lines: " + lastLine);
-			//System.out.println("Number of lines: " + lineCounter);
+			System.out.println("Number of lines: " + lineCounter);
 		} catch(IOException e) {
 			System.out.println("File not found!");
 		}
